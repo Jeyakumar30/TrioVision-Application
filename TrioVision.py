@@ -1,4 +1,4 @@
-from motionApp import motion_main
+from motionApp import detection_algo
 from objDetApp import obj_main
 from easyocrApp import ocr_main
 import streamlit as st
@@ -77,7 +77,7 @@ if selected == "Detect Objects":
     obj_main()
 
 if selected == "Motion Detector":
-    motion_main()
+    detection_algo()
 
 if selected == "Table Text Extractor":
     ocr_main()
