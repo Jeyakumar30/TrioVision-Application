@@ -4,7 +4,13 @@ import numpy as np
 import time
 
 
-def detection_algo(camera, previous, prev_mean, run , FRAME_WINDOW):
+def detection_algo():
+    prev_mean = 0 # for finding difference in mean
+    previous = None # for drawing bounding box
+    st.markdown("<h2 style='text-align: center;'>Real Time Motion Detection</h2>", unsafe_allow_html=True)
+    run = st.toggle('I\'m Ready')
+    FRAME_WINDOW = st.image([])
+    camera = cv2.VideoCapture(0)
     # count = 0
     while run:
         _, frame = camera.read()
@@ -42,13 +48,11 @@ def detection_algo(camera, previous, prev_mean, run , FRAME_WINDOW):
         st.write('Switch ON to detect motion')
 
 
-def motion_main():
-    prev_mean = 0 # for finding difference in mean
-    previous = None # for drawing bounding box
-    st.markdown("<h2 style='text-align: center;'>Real Time Motion Detection</h2>", unsafe_allow_html=True)
-    run = st.toggle('I\'m Ready')
-    FRAME_WINDOW = st.image([])
-    camera = cv2.VideoCapture(0)
-    detection_algo(camera, previous, prev_mean, run, FRAME_WINDOW)
-
-# motion_main()
+# def motion_main():
+#     prev_mean = 0 # for finding difference in mean
+#     previous = None # for drawing bounding box
+#     st.markdown("<h2 style='text-align: center;'>Real Time Motion Detection</h2>", unsafe_allow_html=True)
+#     run = st.toggle('I\'m Ready')
+#     FRAME_WINDOW = st.image([])
+#     camera = cv2.VideoCapture(0)
+detection_algo()
