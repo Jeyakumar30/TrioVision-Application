@@ -55,4 +55,4 @@ def detection_algo():
 #     run = st.toggle('I\'m Ready')
 #     FRAME_WINDOW = st.image([])
 #     camera = cv2.VideoCapture(0)
-detection_algo()
+# detection_algo()
